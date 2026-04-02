@@ -3,7 +3,7 @@ import { supabase } from "../lib/supabase"
 import { useEffect, useState } from "react"
 
 export default function Home() {
-  const [cuisinieres, setCuisinieres] = useState<any[]>([]) 
+  const [cuisinieres, setCuisinieres] = useState<any[]>([])
 
   useEffect(() => {
     supabase.from("cuisinieres").select("*").then(({ data }) => {
