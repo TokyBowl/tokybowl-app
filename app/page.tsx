@@ -35,7 +35,7 @@ export default function Home() {
             }}
           >
             <h2>{c.prenom}</h2>
-            <p>{c.presentation}</p>
+            <p>{c.Bio}</p>
             <p>⭐ 5 / 5</p>
           </div>
         ))}
