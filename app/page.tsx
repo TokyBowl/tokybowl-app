@@ -8,8 +8,13 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      const { data } = await supabase.from("cuisinieres").select("*")
-      if (data) setCuisinieres(data)
+      const { data, error } = await supabase
+        .from("cuisinieres")
+        .select("*")
+
+      if (!error && data) {
+        setCuisinieres(data)
+      }
     }
 
     fetchData()
@@ -22,6 +27,7 @@ export default function Home() {
         backgroundColor: "#0a4a24",
         minHeight: "100vh",
         color: "white",
+        fontFamily: "sans-serif",
       }}
     >
       <h1>TokyBowl 🚀</h1>
@@ -48,8 +54,16 @@ export default function Home() {
               }}
             >
               <h2 style={{ color: "#0a4a24", margin: 0 }}>{c.prenom}</h2>
-              <p style={{ margin: "8px 0", color: "#333" }}>{c.presentation}</p>
-              <p style={{ color: "#f5a623", fontWeight: "bold", margin: 0 }}>
+              <p style={{ margin: "8px 0", color: "#333" }}>
+                {c.presentation}
+              </p>
+              <p
+                style={{
+                  color: "#f5a623",
+                  fontWeight: "bold",
+                  margin: 0,
+                }}
+              >
                 ⭐ 5 / 5
               </p>
             </div>
