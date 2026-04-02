@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect,useState<any[]>([])} from 'react'
 import { useParams } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 
