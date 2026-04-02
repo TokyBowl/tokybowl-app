@@ -21,57 +21,27 @@ export default function Home() {
   }, [])
 
   return (
-    <main
-      style={{
-        padding: "24px",
-        backgroundColor: "#0a4a24",
-        minHeight: "100vh",
-        color: "white",
-        fontFamily: "sans-serif",
-      }}
-    >
+    <main style={{ padding: "24px" }}>
       <h1>TokyBowl 🚀</h1>
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "16px",
-          marginTop: "24px",
-        }}
-      >
+      <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
         {cuisinieres.map((c) => (
-          <a
+          <div
             key={c.id}
-            href={"/cuisinieres/" + c.id}
-            style={{ textDecoration: "none" }}
+            style={{
+              backgroundColor: "#f4f0e8",
+              borderRadius: "12px",
+              padding: "12px",
+            }}
           >
-            <div
-              style={{
-                backgroundColor: "#f4f0e8",
-                borderRadius: "16px",
-                padding: "16px",
-              }}
-            >
-              <h2 style={{ color: "#0a4a24", margin: 0 }}>{c.prenom}</h2>
-              <p style={{ margin: "8px 0", color: "#333" }}>
-                {c.presentation}
-              </p>
-              <p
-                style={{
-                  color: "#f5a623",
-                  fontWeight: "bold",
-                  margin: 0,
-                }}
-              >
-                ⭐ 5 / 5
-              </p>
-            </div>
-          </a>
+            <h2>{c.prenom}</h2>
+            <p>{c.presentation}</p>
+            <p>⭐ 5 / 5</p>
+          </div>
         ))}
 
         {cuisinieres.length === 0 && (
-          <p>Aucune cuisinière trouvée pour le moment.</p>
+          <p>Aucune cuisinière trouvée</p>
         )}
       </div>
     </main>
