@@ -16,16 +16,42 @@ export default function Home() {
   }, [])
 
   return (
-    <main style={{ padding: "24px", backgroundColor: "#0a4a24", minHeight: "100vh", color: "white" }}>
+    <main
+      style={{
+        padding: "24px",
+        backgroundColor: "#0a4a24",
+        minHeight: "100vh",
+        color: "white",
+      }}
+    >
       <h1>TokyBowl 🚀</h1>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginTop: "24px" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "16px",
+          marginTop: "24px",
+        }}
+      >
         {cuisinieres.map((c) => (
-          <a key={c.id} href={"/cuisinieres/" + c.id} style={{ textDecoration: "none" }}>
-            <div style={{ backgroundColor: "#f4f0e8", borderRadius: "16px", padding: "16px" }}>
+          <a
+            key={c.id}
+            href={"/cuisinieres/" + c.id}
+            style={{ textDecoration: "none" }}
+          >
+            <div
+              style={{
+                backgroundColor: "#f4f0e8",
+                borderRadius: "16px",
+                padding: "16px",
+              }}
+            >
               <h2 style={{ color: "#0a4a24", margin: 0 }}>{c.prenom}</h2>
               <p style={{ margin: "8px 0", color: "#333" }}>{c.presentation}</p>
-              <p style={{ color: "#f5a623", fontWeight: "bold", margin: 0 }}>⭐ 5 / 5</p>
+              <p style={{ color: "#f5a623", fontWeight: "bold", margin: 0 }}>
+                ⭐ 5 / 5
+              </p>
             </div>
           </a>
         ))}
